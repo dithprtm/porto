@@ -1,0 +1,625 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+
+}
+
+:root {
+  --background: #f9f9f9;
+  --text: #111;
+  --accent: #8c5e3c;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 999;
+}
+
+header h1 {
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: lighter;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.scroll-more img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.scroll-more img:hover {
+  transform: translateY(-10px);
+  filter: drop-shadow(0 12px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* CARD */
+.card {
+  background: rgb(224, 223, 223);
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#clock {
+  font-size: 20px;
+  font-weight: 100;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+/* THEME COLORS */
+.theme-colors {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.theme-colors span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+}
+
+.color-pink { background: #e7bada; }
+.color-white { background: #eee; border: 1px solid #ccc; }
+.color-brown { background: #8c5e3c; }
+
+/* MAIN CONTAINER */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  min-height: 80vh;
+  position: relative;
+}
+
+/* BIG Y */
+.big-Y {
+  width: 400px;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  margin-top: 60px;
+}
+
+.big-Y img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+/* PROFILE PICTURE */
+.profile {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.profile:hover img {
+  transform: scale(1.1) translateY(-10px);
+}
+
+/* SCROLL MORE */
+.scroll-more {
+  position: absolute;
+  bottom: 90px;
+  right: 45px;
+  text-align: right;
+  font-size: 14px;
+}
+
+.scroll-more img {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 50px;
+  z-index: 9999
+}
+
+/* FLEX SECTION */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 80px;
+  max-width: 1500px;
+  margin: 10px auto;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.ramoeprofile {
+  flex: 1;
+  max-width: 600px;
+  border-radius: 40px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.ramoeprofile img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ramoeprofile:hover img {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.ramoe-text {
+  flex: 1;
+  max-width: 700px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.ramoe-text h1 {
+  font-size: clamp(24px, 5vw, 48px);
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+  letter-spacing: 10px;
+}
+
+.ramoe-text p {
+  font-size: clamp(14px, 2.5vw, 22px);
+  line-height: 1.8;
+  color: #444;
+  text-align: justify;
+}
+
+.container2 {
+  display: flex;
+  justify-content: flex-start; /* ⬅️ ini bikin semua item rata kiri */
+  align-items: flex-start;     /* ⬅️ item tidak center secara vertikal */
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  text-align: left;
+  padding-left: 60px;
+}
+
+/* Wrapper logo + lingkaran */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Lingkaran cokelat */
+.circleramoe {
+  width: 15px;
+  height: 15px;
+  background-color: #8B4513;
+  border-radius: 50%;
+  position: absolute;
+  left: -25px;
+  top: 30px;
+}
+
+/* Logo */
+.logoramoe img {
+  height: 80px;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  animation: rotateLogo 20s linear infinite;
+  transform-origin: center;
+  aspect-ratio: 1 / 1;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Paragraf */
+.text-ramoe {
+  max-width: 1000px;
+  font-size: 24px;
+  line-height: 1.6;
+  text-align: justify;
+  color: #333;
+}
+
+.image-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+
+
+
+.thumb-img {
+  width: 300px;
+  height: auto;
+  border-radius: 30px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumb-img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+
+.dual-image-section {
+  padding: 40px 20px;
+  z-index: 2;
+  position: relative;
+ 
+}
+
+.dual-image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.dual-image-container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  max-width: 1500px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.dual-image-container3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.dual-image-wrapper {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.dual-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.dual-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1) saturate(1.2);
+}
+
+.about{
+  font-size: 60px;
+  letter-spacing: 10px;
+  
+}
+
+.dual-image-wrapper.left {
+  order: 1;
+}
+
+.dual-image-wrapper.right {
+  order: 2;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 1180px) {
+  .card { display: none; }
+  header { flex-direction: column; }
+  .big-Y img { width: 300px; }
+  .profile { display: none; }
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+  }
+  .big-Y {
+    padding-top: 10%;
+  }
+   
+
+  .ramoeprofile {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    order: 2;
+  }
+  .ramoe-text {
+    width: 100%;
+    padding: 0 15px;
+    order: 1;
+    text-align: center;
+    
+  }
+
+  .ramoe-text p {
+    text-align: justify;
+  }
+  .theme-colors.mobile-only {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+    position: static;
+  }
+  .background > .theme-colors:not(.mobile-only) {
+    display: none;
+  }
+
+  .container2 {
+    flex-direction: column;
+    align-items: flex-start; /* tetap rata kiri di mobile */
+    padding-left: 60px;
+  }
+
+  .text-ramoe {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  
+
+  .image-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .image-wrapper.start {
+    justify-content: flex-start;
+  }
+  
+  .image-wrapper.end {
+    justify-content: flex-end;
+  }
+  
+  
+  
+  
+  .image-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .dual-image-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .dual-image-wrapper {
+    flex: 1 1 100%;
+  }
+
+  .about{
+    font-size: 40px;
+    letter-spacing: 10px;
+    
+  }
+
+  .dual-image-container2 {
+    flex-direction: column;
+  }
+
+  .dual-image-wrapper.left {
+    order: 2;
+  }
+
+  .dual-image-wrapper.right {
+    order: 1;
+  }
+  
+}
+
+
+@media (max-width: 480px) {
+  header { flex-direction: column; }
+  .big-Y img { width: 300px; }
+  .scroll-more { font-size: 12px; }
+  
+}
+
+
+/* UTILITY */
+.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.ramoebg {
+  background-image: url('./view/ramoebg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40vh;
+  
+}
+
+.anomalibg {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.anomalibg::-webkit-scrollbar {
+  display: none;
+}
+
+.anomalibg-img-wrapper {
+  position: relative;
+  height: 300vh;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.anomalibg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 1 / 1;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(4px) brightness(1.2); /* ⬅️ This adds the blur */
+  background-color: rgba(159, 132, 132, 0.442); /* Optional: slight white overlay */
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.aspect-container {
+  aspect-ratio: 1 / 1; /* Atau 4 / 3, 1 / 1, tergantung gambar kamu */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.aspect-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* atau contain tergantung kebutuhan */
+  display: block;
+}
+
+.aboutbg {
+  aspect-ratio: 1 / 1; /* 100% rasio: persegi */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px; /* opsional */
+}
+
+.aboutbg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
