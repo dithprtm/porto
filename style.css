@@ -1,4 +1,4 @@
-/* RESET */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,7 +20,7 @@ body {
   --accent: #8c5e3c;
 }
 
-/* HEADER */
+
 header {
   position: fixed;
   top: 0;
@@ -71,7 +71,7 @@ nav a:hover {
   filter: drop-shadow(0 12px 6px rgba(0, 0, 0, 0.2));
 }
 
-/* CARD */
+
 .card {
   background: rgb(224, 223, 223);
   padding: 10px;
@@ -93,7 +93,7 @@ nav a:hover {
   letter-spacing: 2px;
 }
 
-/* THEME COLORS */
+
 .theme-colors {
   position: absolute;
   top: 100px;
@@ -115,7 +115,7 @@ nav a:hover {
 .color-white { background: #eee; border: 1px solid #ccc; }
 .color-brown { background: #8c5e3c; }
 
-/* MAIN CONTAINER */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ nav a:hover {
   position: relative;
 }
 
-/* BIG Y */
+
 .big-Y {
   width: 400px;
   height: auto;
@@ -150,7 +150,7 @@ nav a:hover {
   border-radius: 20px;
 }
 
-/* PROFILE PICTURE */
+
 .profile {
   position: absolute;
   bottom: 20px;
@@ -173,7 +173,7 @@ nav a:hover {
   transform: scale(1.1) translateY(-10px);
 }
 
-/* SCROLL MORE */
+
 .scroll-more {
   position: absolute;
   bottom: 90px;
@@ -190,7 +190,7 @@ nav a:hover {
   z-index: 9999
 }
 
-/* FLEX SECTION */
+
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -246,8 +246,8 @@ nav a:hover {
 
 .container2 {
   display: flex;
-  justify-content: flex-start; /* ⬅️ ini bikin semua item rata kiri */
-  align-items: flex-start;     /* ⬅️ item tidak center secara vertikal */
+  justify-content: flex-start; 
+  align-items: flex-start;     
   gap: 40px;
   flex-wrap: wrap;
   padding: 60px 20px;
@@ -255,14 +255,14 @@ nav a:hover {
   padding-left: 60px;
 }
 
-/* Wrapper logo + lingkaran */
+
 .logo-wrap {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-/* Lingkaran cokelat */
+
 .circleramoe {
   width: 15px;
   height: 15px;
@@ -273,7 +273,7 @@ nav a:hover {
   top: 30px;
 }
 
-/* Logo */
+
 .logoramoe img {
   height: 80px;
   width: 100%;
@@ -293,7 +293,7 @@ nav a:hover {
   }
 }
 
-/* Paragraf */
+
 .text-ramoe {
   max-width: 1000px;
   font-size: 24px;
@@ -335,6 +335,8 @@ nav a:hover {
  
 }
 
+
+
 .dual-image-container {
   display: flex;
   justify-content: space-between;
@@ -355,21 +357,47 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-.dual-image-container3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  max-width: 1400px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
+
 
 .dual-image-wrapper {
   flex: 1 1 45%;
   display: flex;
   justify-content: center;
 }
+
+.dual-image-section3 {
+  padding: 40px 20px;
+}
+
+.dual-image-container3 {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.dual-image-wrapper3 {
+  width: 100%;
+}
+
+.about-text {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.text-ramoe {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+
 
 .dual-img {
   width: 100%;
@@ -400,7 +428,7 @@ nav a:hover {
 
 
 
-/* RESPONSIVE */
+
 @media (max-width: 1180px) {
   .card { display: none; }
   header { flex-direction: column; }
@@ -447,7 +475,7 @@ nav a:hover {
 
   .container2 {
     flex-direction: column;
-    align-items: flex-start; /* tetap rata kiri di mobile */
+    align-items: flex-start; 
     padding-left: 60px;
   }
 
@@ -520,7 +548,7 @@ nav a:hover {
 }
 
 
-/* UTILITY */
+
 .hide {
   opacity: 0;
   transform: translateY(20px);
@@ -577,15 +605,15 @@ nav a:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  backdrop-filter: blur(4px) brightness(1.2); /* ⬅️ This adds the blur */
-  background-color: rgba(159, 132, 132, 0.442); /* Optional: slight white overlay */
+  backdrop-filter: blur(4px) brightness(1.2); 
+  background-color: rgba(159, 132, 132, 0.442); 
   pointer-events: none;
   z-index: 1;
 }
 
 
 .aspect-container {
-  aspect-ratio: 1 / 1; /* Atau 4 / 3, 1 / 1, tergantung gambar kamu */
+  aspect-ratio: 1 / 1; 
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -594,16 +622,17 @@ nav a:hover {
 .aspect-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* atau contain tergantung kebutuhan */
+  object-fit: cover; 
   display: block;
 }
 
 .aboutbg {
-  aspect-ratio: 1 / 1; /* 100% rasio: persegi */
+  position: relative; 
+  aspect-ratio: 1 / 1;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 20px; /* opsional */
+  border-radius: 20px;
 }
 
 .aboutbg img {
@@ -613,6 +642,51 @@ nav a:hover {
   display: block;
   margin-top: 10px;
 }
+
+.pink-toggle {
+  position: absolute;       
+  bottom: 80px;             
+  right: 40px;              
+  background-color: #f5b6c2;
+  color: #000;
+  font-weight: 100;
+  padding: 14px 24px;
+  border-radius: 20px;
+  font-family: 'Satoshi', sans-serif;
+  cursor: pointer;
+  z-index
+}
+
+
+.pink-toggle:hover {
+  transform: translateY(-4px);
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+  color: #333;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.6); /* optional semi transparan */
+  padding: 6px 12px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional glow */
+}
+.site-footer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* optional glow */
+ 
+}
+
+
+
+
+
+
 
 
 
